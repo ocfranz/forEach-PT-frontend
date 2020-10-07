@@ -100,6 +100,15 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const SuccessDisplay = styled.div`
+  span {
+    display: block;
+  }
+  .big {
+    font-size: 18px;
+  }
+`;
+
 export {
   ModalBody,
   ModalHeading,
@@ -108,4 +117,5 @@ export {
   UserTagContainer,
   AutoComplete,
   ButtonContainer,
+  SuccessDisplay,
 };

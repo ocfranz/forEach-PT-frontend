@@ -16,6 +16,7 @@ import {
   AutoComplete,
   ButtonContainer,
   UserTagContainer,
+  SuccessDisplay,
 } from "./styles";
 import ModalWrapper from "../../components/ModalWrapper";
 import CustomSelect from "../../components/CustomSelect";
@@ -83,6 +84,7 @@ const ModalAddTrip = ({ visible }) => {
   };
   const onCancel = () => {
     dispatch({ type: TOGGLE_MODAL_ADD_TRIP, payload: false });
+    setSuccess(false);
   };
   const onAddTrip = () => {
     Axios.post(
@@ -229,22 +231,26 @@ const ModalAddTrip = ({ visible }) => {
           </>
         )}
         {success && (
-          <>
+          <SuccessDisplay>
             <span>Viaje Agregado exitosamente</span>
             <div>
               <div></div>
-              <span>
-                Huella de carbono total : {carbonData.carbonFootPrintEmission}
+              <span>Huella de carbono total :</span>
+              <span className="big">
+                {carbonData.carbonFootPrintEmission.toFixed(3)}
               </span>
             </div>
             <div>
               <div></div>
-              <span>
-                Huella de carbono por trabajador :{" "}
-                {carbonData.carbonFootPrintPerEmployee}
+              <span>Huella de carbono por trabajador :</span>
+              <span className="big">
+                {carbonData.carbonFootPrintPerEmployee.toFixed(3)}
               </span>
+              <div>
+                <Button children="Cerrar" handleOnClick={onCancel} />
+              </div>
             </div>
-          </>
+          </SuccessDisplay>
         )}
       </ModalBody>
     </ModalWrapper>

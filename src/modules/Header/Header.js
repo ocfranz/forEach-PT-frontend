@@ -9,13 +9,7 @@ const Header = (props) => {
       <SimpleGrid>
         <HeaderWrapper>
           <Brand>Huella de Carbono - Tracker</Brand>
-          <HeaderNav>
-            <ul>
-              <li>
-                <a href="/employee">Ver Trabajadores</a>
-              </li>
-            </ul>
-          </HeaderNav>
+          <HeaderNav></HeaderNav>
         </HeaderWrapper>
       </SimpleGrid>
     </HeaderStyled>

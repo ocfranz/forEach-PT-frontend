@@ -23,6 +23,7 @@ const ModalAddTrip = ({ visible }) => {
   const [formData, setFormData] = useState({ name: "", username: "" });
   const onClose = () => {
     dispatch({ type: TOGGLE_MODAL_ADD_EMPLOYEE, payload: false });
+    setSuccess(false);
   };
 
   const onInputChange = (e, type) => {

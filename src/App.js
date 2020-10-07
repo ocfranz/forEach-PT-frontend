@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import pageHome from "./pages/Home";
-import pageEmployee from "./pages/Employee";
 import pageNotFound from "./pages/NotFound";
 
 const App = (props) => {
@@ -19,7 +18,6 @@ const App = (props) => {
           to={window.location.pathname.slice(0, -1)}
         />
         <Route exact path="/" component={pageHome} />
-        <Route exact path="/employee" component={pageEmployee} />
         <Route path="*" component={pageNotFound} />
       </Switch>
     </Router>
