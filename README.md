@@ -1,4 +1,4 @@
-## PT-frontend
+# PT-frontend
 
 React app for Carbon Foot Print System,
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
