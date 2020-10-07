@@ -1,14 +1,24 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+import { TOGGLE_MODAL_ADD_TRIP } from "../../actions/types";
 import { HomeWrapper, HomeHeading, HomeData } from "./styles";
 import SimpleGrid from "../../components/SimpleGrid";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Header from "../../modules/Header";
+import ModalAddTrip from "../../modules/ModalAddTrip";
+import ModalAddEmployee from "../../modules/ModalAddEmployee";
+import UserList from "../../modules/UserList";
 
 const Home = (props) => {
+  const dispatch = useDispatch();
+  const { visibleModalAddTrip, visibleModalAddEmployee } = useSelector(
+    (state) => state.uiReducer
+  );
+
   return (
-    <div>
+    <>
       <Header />
       <HomeWrapper>
         <SimpleGrid>
@@ -18,7 +28,9 @@ const Home = (props) => {
               <div>
                 <Button
                   children="Agregar nuevo viaje"
-                  handleOnClick={() => {}}
+                  handleOnClick={() => {
+                    dispatch({ type: TOGGLE_MODAL_ADD_TRIP, payload: true });
+                  }}
                 />
               </div>
             </HomeHeading>
@@ -29,15 +41,17 @@ const Home = (props) => {
                 </div>
               </div>
               <div className="summarize-data">
-                <div>
-                  <span>Resumen</span>
+                <div className="summarize-data-wrapper">
+                  <UserList />
                 </div>
               </div>
             </HomeData>
           </div>
         </SimpleGrid>
       </HomeWrapper>
-    </div>
+      <ModalAddTrip visible={visibleModalAddTrip} />
+      <ModalAddEmployee visible={visibleModalAddEmployee} />
+    </>
   );
 };
 

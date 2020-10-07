@@ -23,7 +23,7 @@ const HomeData = styled.div`
   }
   .summarize-data {
     width: 30%;
-    div:first-child {
+    .summarize-data-wrapper {
       border-radius: 10px;
       padding: 10px;
       background-color: #ffffff;

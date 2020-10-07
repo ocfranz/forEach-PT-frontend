@@ -1,15 +1,15 @@
 import styled from "styled-components";
 const ModalBody = styled.div`
   width: 40%;
-  height: 100%;
+  height: 50%;
   margin: 0 auto;
   border-radius: 10px;
   background-color: #ffffff;
   padding: 20px 30px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 const ModalHeading = styled.div`
   width: 100%;
@@ -18,6 +18,7 @@ const ModalHeading = styled.div`
     font-size: 17px;
   }
 `;
+
 const AddForm = styled.div`
   width: 70%;
   margin: 0 auto;
@@ -49,48 +50,6 @@ const AddFormItem = styled.div`
     }
   }
 `;
-const UserTagContainer = styled.div`
-  padding-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  span {
-    background-color: rgb(240, 240, 240);
-    padding: 5px 10px;
-    font-size: 13px;
-    border-radius: 20px;
-    &:before {
-      content: "@";
-    }
-  }
-  .empty-display {
-    background-color: transparent;
-    font-size: 13px;
-    opacity: 0.5;
-    &:before {
-      content: "";
-    }
-  }
-`;
-
-const AutoComplete = styled.div`
-  position: absolute;
-  top: 100%;
-  background-color: #ffffff;
-  width: 100%;
-  left: 0;
-  z-index: 9;
-  -webkit-box-shadow: 0px 5px 2px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 5px 2px 2px rgba(0, 0, 0, 0.1);
-  display: ${(props) => {
-    if (props.active) return "block";
-    return "none";
-  }};
-  div {
-    padding: 10px;
-    cursor: pointer;
-  }
-`;
-
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -99,13 +58,21 @@ const ButtonContainer = styled.div`
     margin-left: 10px;
   }
 `;
-
+const SuccessDisplay = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  span {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+`;
 export {
   ModalBody,
   ModalHeading,
   AddForm,
   AddFormItem,
-  UserTagContainer,
-  AutoComplete,
   ButtonContainer,
+  SuccessDisplay,
 };
