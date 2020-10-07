@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { Helmet } from "react-helmet";
 
+import { store } from "./store/store";
 import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 import GlobalStyles from "./styles/GlobalStyles";
@@ -14,8 +16,10 @@ ReactDOM.render(
         rel="stylesheet"
       />
     </Helmet>
-    <GlobalStyles />
-    <App />
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
